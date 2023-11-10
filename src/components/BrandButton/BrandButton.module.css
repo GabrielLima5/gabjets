@@ -1,0 +1,15 @@
+.brand {
+    width: fit-content;
+    background-color: #00a9ff;
+    margin-bottom: 30px;
+}
+
+.brand:hover{
+    background-color: #7ad2ff;
+    cursor: pointer;
+}
+
+.brand img{
+    width: 280px;
+    height: 90px;
+}

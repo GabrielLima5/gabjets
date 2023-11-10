@@ -1,0 +1,89 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details{
+    display: flex;
+}
+
+.details img{
+    height: 640px;
+}
+
+.details .info{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.details .info ul{
+    list-style: none;
+    font-size: 1.2rem;
+    text-align: left;
+    line-height: 2rem;
+}
+
+.details .info .payment_message{
+    align-self: flex-end;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    max-width: 1500px;
+    margin-bottom: 50px;
+}
+
+.description h3,
+.description h4{
+    font-weight: bold;
+    margin: 30px 0 10px;
+}
+
+.description h3{
+    font-size: 2.2rem;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+}
+
+.description h4{
+    font-size: 2.5rem;
+}
+
+.description ul{
+    list-style: none;
+    margin: 0;
+}
+
+.description ul div{
+    margin: 40px 0;
+}
+
+.description ul li{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.description p{
+    line-height: 1.7rem;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+button,
+h1{
+    margin: 20px;
+}
+
+h1, h2{
+    color: #dd725f;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}

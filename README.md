@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# GabJets
+<p align="center">
+    <img src="https://github.com/GabrielLima5/imagens-projetos/blob/main/images/GabJets.png" alt="Projeto GabJets">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A GabJets é uma plataforma online de concessionária de aeronaves, oferecendo aos usuários a oportunidade de adquirir aviões executivos e comerciais de última geração com a mais alta capacidade. No site da GabJets, os clientes podem explorar informações detalhadas sobre cada aeronave disponível, facilitando a escolha do avião ideal para suas necessidades.
 
-## Available Scripts
+## Recursos Principais
+* **Compra Facilitada**: Os usuários têm a facilidade de comprar até 3 aeronaves de uma só vez, proporcionando uma experiência de compra eficiente.
 
-In the project directory, you can run:
+* **Filtragem**: A plataforma oferece a capacidade de filtrar a busca de aeronaves por fabricante, simplificando a navegação e tornando a escolha mais personalizada.
 
-### `npm start`
+* **Contato**: Os clientes podem entrar em contato diretamente por meio da área designada, garantindo uma comunicação eficaz e rápida.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Habilidades colocadas em prática
+Desenvolvido utilizando React, esse projeto me permitiu a aplicação prática de diversos conceitos, como:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **Passagem de Props**: A habilidade de passar propriedades entre componentes para garantir uma comunicação eficiente.
 
-### `npm test`
+* **Context API**: Utilização da Context API para armazenar dados globalmente, notavelmente empregada no carrinho de compras da aplicação.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **React Router**: Implementação de rotas de navegação na aplicação, proporcionando uma experiência de usuário mais dinâmica e intuitiva.
 
-### `npm run build`
+* **Renderização Dinâmica**: Utilização do método map() para renderizar componentes dinamicamente, melhorando a eficiência na exibição de informações.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **Filtragem de Dados**: Aplicação do método filter() para facilitar a busca e seleção de elementos em arrays, contribuindo para uma navegação mais fluida.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Créditos
+Todas as imagens contidas nesse projeto foram tiradas dos seguintes sites:
+<a href="https://www.jetphotos.com/">JetPhotos</a> (imagens dos aviões)
+<a href="https://unsplash.com/">Unsplash</a> (imagem na página "Sobre")

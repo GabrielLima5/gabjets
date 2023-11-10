@@ -1,0 +1,79 @@
+h1, h2{
+    margin-bottom: 10px;
+    font-size: 2.3rem;
+}
+
+.container{
+    width: 100%;
+    height: calc(100vh - 215px);
+}
+
+.container .costumer_data{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.container .form{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.container .form .button{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.container .form .localization_inputs{
+    display: flex;
+}
+
+.container .form .localization_inputs .state_input{
+    width: 30%;
+    margin-left: 10px;
+}
+
+.cart_info{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart_info .info_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+}
+
+.cart_info .aircraft_image img{
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.cart_info .description{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.cart_info .description div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cart_info .final_price{
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #91ff91;
+}

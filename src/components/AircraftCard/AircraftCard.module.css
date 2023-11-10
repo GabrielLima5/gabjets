@@ -1,0 +1,64 @@
+.card .image img{
+    width: 350px;
+    height: 240px;    
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+}
+
+.card{
+    border-radius: 32px;
+    background-color: #931600;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    outline: 5px solid #4c0b00;
+    margin: 25px 10px;
+}
+
+.card:hover{
+    transform: translateY(-30px);
+    transition: .5s ;
+}
+
+.card .description{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    font-size: 2rem;
+}
+
+.card .description .name,
+.card .description .price{
+    margin: 20px 0;
+}
+
+.card .description .name{
+    font-weight: bold;
+}
+
+.card .description .price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.card .description .currency{
+    color: #35c2e7;
+    font-size: 1.7rem;
+}
+
+.card .description .payment_message{
+    font-size: .8rem;
+    align-self: flex-end;
+    margin-right: 30px;
+    color: #ffffffa3;
+}
+
+.card .buttons{
+    display: flex;
+    justify-content: space-around;
+}

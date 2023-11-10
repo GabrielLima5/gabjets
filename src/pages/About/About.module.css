@@ -1,0 +1,33 @@
+.about{
+    display: flex;
+    flex-direction: column;
+}
+
+.about .container{
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.about p{
+    line-height: 2rem;
+}
+
+.container .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 800px;
+    margin-right: 45px;
+    font-size: 1.3em;
+    text-align: justify;
+    max-height: 700px;
+}
+
+.container img{
+    height: 700px;
+}
+
+.container .buttons{
+    display: flex;
+    justify-content: space-around;
+}

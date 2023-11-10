@@ -1,0 +1,31 @@
+.buy_page{
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 212px);
+}
+
+.buy_page h1{
+    font-size: 3em;
+}
+
+.buy_page p{
+    font-size: 1.5em;
+    margin-bottom: 50px;
+}
+
+.buy_page .container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.container .companies{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 200px;
+}
+
+.container .image img{
+    width: 700px;
+    margin-bottom: 30px;
+}

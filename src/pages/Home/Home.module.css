@@ -1,0 +1,98 @@
+.home{
+    min-height: calc(100vh - 210px);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 150px 0;
+}
+
+.homepage .texts{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.homepage .texts .company_name{
+    font-size: 8rem;
+    font-weight: bold;
+}
+
+.homepage .texts .slogan{
+    font-size: 2rem;
+    letter-spacing: 8px;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 6s steps(40) infinite,
+        cursor .4s step-end infinite alternate
+}
+
+.homepage img{
+    width: 800px;
+}
+
+/* cursor blinking */
+@keyframes cursor{
+    50% { border-color: transparent }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    30% { width: 100% }
+    to { width: 100% }
+}
+
+@media only screen and (max-width: 1900px){
+    .homepage .texts .company_name{
+        font-size: 6rem;
+    }
+
+    .homepage .texts .slogan{
+        font-size: 1.5rem;
+    }
+
+    .homepage img{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1500px){
+    .homepage .texts{
+        padding-left: 20px;
+        margin-right: 20px;
+    }
+
+    .homepage .texts .company_name{
+        font-size: 4rem;
+    }
+
+    .homepage .texts .slogan{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    .homepage{
+        flex-direction: column;
+        margin: 50px 0;
+    }
+
+    .homepage .texts{
+        margin-bottom: 50px;
+    }
+
+    .homepage img{
+        width: 60%;
+    }
+}

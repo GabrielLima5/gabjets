@@ -1,0 +1,39 @@
+.navbar{
+    width: 50%;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: .4s;
+}
+
+.navbar ul li.cart{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.navbar ul li.cart .cart_badge{
+    width: 15px;
+    border-radius: 50%;
+    background-color: #e6523a;
+}
+
+.navbar ul li.cart svg{
+    font-size: 2.5rem;
+    color: #ff8470;
+    cursor: pointer;
+}
+
+.navbar ul li a:hover{
+    color: #e6523a;
+}

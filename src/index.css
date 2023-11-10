@@ -1,13 +1,79 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hide{
+  display: none;
+}
+
+body{
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+label{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+label span{
+  text-align: left;
+  font-size: 1.2em;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+input,
+select,
+textarea{
+  width: 100%;
+  outline: none;
+  border: #e75035 2px solid;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+}
+  
+input::placeholder{
+  color: #fff;
+}
+
+textarea{
+  height: 110px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.fade{
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: fixed;
+  opacity: .3;
+  overflow: hidden;
+}
+
+.modal{
+  position: fixed;
+  width: 600px;
+  padding: 10px;
+  background-color: #242424;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error{
+  color: #ff8989;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  text-align: left;
 }

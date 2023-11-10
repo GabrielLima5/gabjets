@@ -1,0 +1,26 @@
+.data_container{
+    text-align: left;
+    display: flex;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.data{
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.value{
+    max-height: 350px;
+    overflow: overlay;
+}
+
+.center{
+    text-align: center;
+}
+
+.type{
+    text-align: center;
+    font-size: 1.7em;
+    font-weight: bold;
+}

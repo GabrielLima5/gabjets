@@ -1,0 +1,66 @@
+.container{
+  height: calc(100vh - 206px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border:10px solid #FFF;
+    border-radius: 50%;
+    position: relative;
+    transform:rotate(45deg);
+    box-sizing: border-box;
+  }
+  .loader::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    inset:-10px;
+    border-radius: 50%;
+    border:10px solid #FF3D00;
+    animation: prixClipFix 5s infinite linear;
+  }
+  
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  }
+
+  .textbox{
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+
+  .dots{
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 1.5em;
+    letter-spacing: 8px;
+    border-right: 1px solid;
+    width: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s steps(5) infinite,
+        cursor .4s step-end infinite alternate
+}
+
+@keyframes cursor{
+    50% { border-color: transparent }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    30% { width: 30% }
+    70% { width: 70%;}
+    to { width: 100% }
+}

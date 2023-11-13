@@ -42,7 +42,7 @@ export default function AircraftInfo(){
                                     <li>Autonomia: <b>{aircraft.specs.range}</b></li>
                                     <li>Peso máximo de decolagem: <b>{aircraft.specs.maxTakeoffWeight}</b></li>
                                     <li>Velocidade máxima: <b>{aircraft.specs.maxSpeed}</b></li>
-                                    <li>Quantidade máxima de passageiros: <b>{aircraft.specs.passengersQty}</b></li>
+                                    <li>Qtd. máxima de passageiros: <b>{aircraft.specs.passengersQty}</b></li>
                                 </ul>
                                 <h2>R${formatToMoney(aircraft.price)}</h2>
                                 <div className={styles.payment_message}>*** á vista</div>

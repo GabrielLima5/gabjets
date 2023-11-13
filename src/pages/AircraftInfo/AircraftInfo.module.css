@@ -7,6 +7,8 @@
 
 .details{
     display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .details img{
@@ -39,6 +41,7 @@
     text-align: left;
     max-width: 1500px;
     margin-bottom: 50px;
+    padding: 0 20px;
 }
 
 .description h3,
@@ -86,4 +89,72 @@ h1, h2{
     color: #dd725f;
     font-size: 2.8rem;
     margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1600px){
+    .details img{
+        height: 350px;
+    }
+
+    .description h4{
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    .details{
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
+    .description ul{
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .details img{
+        height: 200px;
+    }
+
+    .details .info ul,
+    .description p,
+    .container button{
+        font-size: 1rem;
+    }
+
+    h1, h2{
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .details img{
+        height: 150px;
+    }
+
+    .description{
+        padding: 0 10px;
+    }
+
+    h1, h2,
+    .description h3,
+    .description h4{
+        font-size: 1.3rem;
+    }
+
+    .details .info ul{
+        font-size: .8rem;
+    }
+}
+
+@media only screen and (max-width: 300px){
+    .description h4{
+        font-size: .9rem;
+    }
+
+    .details{
+        padding: 0 10px;
+    }
 }

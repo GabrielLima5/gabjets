@@ -62,3 +62,53 @@
     display: flex;
     justify-content: space-around;
 }
+
+@media only screen and (max-width: 1500px){
+    .card,
+    .card .image img{
+        width: 300px;
+    }
+
+    .card .image img{
+        height: unset;
+    }
+
+    .card .description .name{
+        font-size: 1.5rem;
+    }
+
+    .card .buttons button{
+        font-size: .8rem !important;
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 980px){
+    .card,
+    .card .image img{
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 750px){
+    .card,
+    .card .image img{
+        width: 280px;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .card,
+    .card .image img{
+        width: 250px;
+    }
+
+    .card .buttons button{
+        font-size: .7rem !important;
+        padding: 20px;
+    }
+
+    .card .description .name{
+        font-size: 1.2rem;
+    }
+}

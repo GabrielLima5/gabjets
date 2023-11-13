@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.form_container p{
+    padding: 0 20px;
+}
+
 .form{
     width: 700px;
     display: flex;
@@ -15,4 +19,36 @@
 .form .btn{
     align-self: center;
     margin: 35px;
+}
+
+.form > span{
+    font-size: .8em;
+}
+
+.form > span.error{
+    font-size: 1em;
+}
+
+@media only screen and (max-width: 800px){
+    .form{
+        width: 370px;
+    }
+
+    .form_container p{
+        max-width: 400px;
+    }
+
+    .form_container h1{
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .form{
+        width: 260px;
+    }
+
+    .form_container p{
+        max-width: 320px;
+    }
 }

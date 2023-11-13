@@ -7,15 +7,19 @@ import Modal from '../../components/Modal/Modal'
 import { useModalContext } from '../../context/ModalContext'
 import { useAircraftPurchase } from '../../hooks/useAircraftPurchase'
 import { useFormatNumber } from '../../hooks/useFormatNumber'
+import { useAircraftContext } from '../../context/AircraftContext'
 
 export default function AircraftInfo(){
     const { id } = useParams()
     const {display, setDisplay} = useModalContext()
     const { handleAddAircraftToBuy } = useAircraftPurchase()
     const { formatToMoney } = useFormatNumber()
+    const { scrollTop } = useAircraftContext()
 
     useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: 'instant'})
+        scrollTop()
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return(

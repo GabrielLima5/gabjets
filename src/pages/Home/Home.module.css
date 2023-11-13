@@ -1,5 +1,5 @@
 .home{
-    min-height: calc(100vh - 210px);
+    min-height: calc(100vh - 215px);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -94,5 +94,50 @@
 
     .homepage img{
         width: 60%;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .homepage .texts{
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .homepage .texts .slogan{
+        letter-spacing: 3px;
+    }
+
+    .home button{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .homepage .texts .slogan{
+        letter-spacing: 1px;
+    }
+
+    .homepage img{
+        min-width: 250px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .homepage .texts .company_name{
+        font-size: 3rem;
+    }
+
+    .homepage .texts .slogan{
+        font-size: .8rem;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .home button{
+        font-size: .8rem;
+    }
+
+    .homepage .texts .slogan{
+        font-size: .7rem;
     }
 }

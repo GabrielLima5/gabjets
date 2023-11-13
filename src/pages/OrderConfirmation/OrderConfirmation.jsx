@@ -11,7 +11,7 @@ import { useOrderContext } from '../../context/OrderContext'
 import { useFormatNumber } from '../../hooks/useFormatNumber'
 
 export default function OrderConfirmation(){
-    const {aircraftToBuy} = useAircraftContext()
+    const {aircraftToBuy, scrollTop} = useAircraftContext()
     const {setDisplay} = useModalContext()
     const {name, city, airport, setName, setCity, setAirport, setShowConfirmation, totalPrice, setTotalPrice} = useOrderContext()
     const { formatToMoney } = useFormatNumber()
@@ -36,7 +36,13 @@ export default function OrderConfirmation(){
 
     useEffect(() => {
         getTotalPrice()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [aircraftToBuy])
+
+    useEffect(() => {
+        scrollTop()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const airports = [
         'Aeroporto Intl. de Guarulhos (GRU/SP)', 

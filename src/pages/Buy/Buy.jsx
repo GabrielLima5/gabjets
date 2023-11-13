@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './Buy.module.css'
 import EmbraerLogo from '../../assets/Logo/embraer-logo.png'
 import AirbusLogo from '../../assets/Logo/airbus-logo.png'
@@ -9,9 +9,11 @@ import EmbraerAirplane from '../../assets/MainAirplanes/embraer-175.jpg'
 import AirbusAirplane from '../../assets/MainAirplanes/airbus-a320.jpg'
 import BrandButton from '../../components/BrandButton/BrandButton'
 import { Link } from 'react-router-dom'
+import { useAircraftContext } from '../../context/AircraftContext'
 
 export default function Buy(){
     const [image, setImage] = useState(EmbraerAirplane)
+    const { scrollTop } = useAircraftContext()
 
     const handleLogo = (e) => {
         switch(e.target.parentNode.dataset.airplane){
@@ -26,8 +28,16 @@ export default function Buy(){
             case "boeing":
                 setImage(BoeingAirplane)
                 break;
+
+            default:
+                break;
         }
     }
+
+    useEffect(() => {
+        scrollTop()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return(
         <div className={styles.buy_page}>

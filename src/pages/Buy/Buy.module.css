@@ -16,6 +16,7 @@
 .buy_page .container{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .container .companies{
@@ -28,4 +29,64 @@
 .container .image img{
     width: 700px;
     margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 1300px){
+    .container .image img{
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .container .companies{
+        margin-right: 50px;
+    }
+
+    .buy_page h1{
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .container .companies{
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .buy_page .container{
+        flex-direction: column;
+    }
+
+    .buy_page button{
+        margin: 10px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .buy_page h1{
+        font-size: 1.5em;
+    }
+
+    .buy_page p{
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .container .image img{
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .container .image img{
+        width: 250px;
+    }
+
+    .container .companies{
+        flex-direction: column;
+    }
+
+    .buy_page .container{
+        flex-direction: column-reverse;
+    }
 }

@@ -4,14 +4,21 @@ import { aircrafts } from '../../data/aircrafts'
 import AircraftCard from '../../components/AircraftCard/AircraftCard'
 import { useCapitalizeString } from '../../hooks/useCapitalizeString'
 import SearchInput from '../../components/SearchInput/SearchInput'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useAircraftContext } from '../../context/AircraftContext'
 
 export default function Search(){
     const [search, setSearch] = useState('')
     const [searchParams] = useSearchParams()
+    const { scrollTop } = useAircraftContext()
     const query = searchParams.get('q')
     const { capitalizeString } = useCapitalizeString()
     const filteredAircrafts = aircrafts.filter(aircraft => aircraft.name.toLowerCase().includes(query.toLowerCase()))
+
+    useEffect(() => {
+        scrollTop()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return(
         <div className={styles.search_fleet}>

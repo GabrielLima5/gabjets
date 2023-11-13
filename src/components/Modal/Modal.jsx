@@ -17,8 +17,8 @@ export default function Modal(){
         <div className={display ? styles.container : styles.hide}>
             <div className={styles.fade} onClick={() => setDisplay(false)}></div>
             <div className={styles.modal}>
+                <BsXLg onClick={() => setDisplay(false)} />
                 <div className={styles.cards}>
-                    <BsXLg onClick={() => setDisplay(false)} />
                     {aircraftToBuy.length ? aircraftToBuy.map(aircraft => (
                         <div className={styles.card} key={aircraft.id}>
                             <div className={styles.aircraft_image}>

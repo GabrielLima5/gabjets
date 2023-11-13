@@ -4,9 +4,18 @@ import ClassicButton from '../../components/ClassicButton/ClassicButton'
 import aircraftImage from '../../assets/Home/home-aircraft.jpg'
 import PurchaseConfirmationModal from '../../components/PurchaseConfirmationModal/PurchaseConfirmationModal'
 import { useOrderContext } from '../../context/OrderContext'
+import { useAircraftContext } from '../../context/AircraftContext'
+import { useEffect } from 'react'
 
 export default function Home(){
     const { showConfirmation } = useOrderContext()
+    const { scrollTop } = useAircraftContext()
+
+    useEffect(() => {
+        scrollTop()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return(
         <>
             {showConfirmation && <PurchaseConfirmationModal />}

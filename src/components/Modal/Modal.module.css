@@ -54,6 +54,11 @@
     margin: 20px 0;
 }
 
+.modal .card svg{
+    align-self: center;
+    margin: 0;
+}
+
 .modal .card{
     border: 2px solid #fff;
     padding: 5px;
@@ -86,4 +91,62 @@
 .card svg{
     font-size: 2.2rem;
     padding-right: 10px;
+}
+
+@media only screen and (max-width: 700px){
+    .modal{
+        width: 400px;
+    }
+
+    .modal .card svg{
+        margin: 0;
+        align-self: center;
+    }
+
+    .card .description{
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .modal button{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .modal{
+        width: 300px;
+    }
+
+    .modal .cards{
+        overflow-y: scroll;
+    }
+
+    .card .aircraft_image{
+        width: 100%;
+    }
+    
+    .modal .cards .empty_cart{
+        font-size: 1rem;
+    }
+
+    .modal .card{
+        flex-direction: column;
+    }
+
+    .modal .card svg{
+        font-size: 1.8rem;
+    }
+
+    .modal button{
+        width: 240px;
+        font-size: .8rem;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .modal{
+        width: 250px;
+    }
+
 }

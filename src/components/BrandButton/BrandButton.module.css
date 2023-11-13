@@ -13,3 +13,24 @@
     width: 280px;
     height: 90px;
 }
+
+@media only screen and (max-width: 850px){
+    .brand img{
+        width: 150px;
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .brand img{
+        width: 100px;
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .brand img{
+        width: 240px;
+        height: 80px;
+    }
+}

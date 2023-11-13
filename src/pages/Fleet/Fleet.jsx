@@ -3,14 +3,21 @@ import { useParams } from "react-router-dom"
 import { aircrafts } from '../../data/aircrafts'
 import AircraftCard from "../../components/AircraftCard/AircraftCard"
 import SearchInput from '../../components/SearchInput/SearchInput'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useCapitalizeString } from '../../hooks/useCapitalizeString'
+import { useAircraftContext } from '../../context/AircraftContext'
 
 export default function Fleet(){
     const { company } = useParams()
     const [search, setSearch] = useState('')
     const { capitalizeString } = useCapitalizeString()
+    const { scrollTop } = useAircraftContext()
     
+    useEffect(() => {
+        scrollTop()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return(
         <div className={styles.fleet}>
             <h1>Catálogo de Aeronaves {company ? capitalizeString(company) : ''}</h1>

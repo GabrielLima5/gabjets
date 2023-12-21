@@ -5,10 +5,11 @@
 
 .container{
     width: 100%;
-    min-height: calc(100vh - 215px);
+    min-height: calc(100vh - 215px)
 }
 
 .container .costumer_data{
+    max-height: 635px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
@@ -22,6 +23,7 @@
 }
 
 .container .form .button{
+    margin: 10px;
     display: flex;
     justify-content: center;
     margin-top: 30px;

@@ -9,7 +9,6 @@
 }
 
 .container .costumer_data{
-    max-height: 635px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;

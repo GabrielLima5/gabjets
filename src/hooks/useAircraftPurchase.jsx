@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useAircraftContext } from '../context/AircraftContext';
 import { useModalContext } from '../context/ModalContext';
 

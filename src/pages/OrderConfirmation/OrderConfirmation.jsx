@@ -26,10 +26,9 @@ export default function OrderConfirmation(){
     const getTotalPrice = () => {
         if (aircraftToBuy.length === 1){
             setTotalPrice(formatToMoney(aircraftToBuy.map(acft => acft.price)))
-        } else {
-            const price = aircraftToBuy.length && aircraftToBuy.reduce((acc, acft) => {
-                return formatToMoney(parseInt(acc.price) + parseInt(acft.price))
-            })
+        } else { 
+            const sumOfPrices = aircraftToBuy.map(acft => acft.price).reduce((acc, acft) => acc + acft)
+            const price = aircraftToBuy.length && formatToMoney(sumOfPrices)
             setTotalPrice(price)
         }
     }

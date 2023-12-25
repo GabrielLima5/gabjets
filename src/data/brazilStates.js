@@ -26,4 +26,4 @@ export const brazilStates = [
     'SP',
     'SE',
     'TO',
-    ];
+];

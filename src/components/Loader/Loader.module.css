@@ -1,4 +1,5 @@
 .container{
+  width: 100%;
   height: calc(100vh - 215px);
   display: flex;
   flex-direction: column;

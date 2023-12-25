@@ -93,16 +93,23 @@
     padding-right: 10px;
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 1200px){
     .modal{
         width: 400px;
     }
 
-    .modal .card svg{
+    .card .description{
+        font-size: .9rem;
+    }
+
+    .card svg{
+        font-size: 2rem;
         margin: 0;
         align-self: center;
     }
+}
 
+@media only screen and (max-width: 700px){
     .card .description{
         font-size: 1rem;
         width: 100%;
@@ -115,7 +122,11 @@
 
 @media only screen and (max-width: 500px){
     .modal{
-        width: 220px;
+        width: 180px;
+    }
+
+    .card .description{
+        font-size: .8rem;
     }
 
     .modal .cards{
@@ -134,19 +145,8 @@
         flex-direction: column;
     }
 
-    .modal .card svg{
-        font-size: 1.8rem;
-    }
-
     .modal button{
         width: 165px;
         font-size: .8rem;
     }
-}
-
-@media only screen and (max-width: 400px){
-    .modal{
-        width: 250px;
-    }
-
 }

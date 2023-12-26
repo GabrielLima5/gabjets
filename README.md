@@ -29,3 +29,5 @@ Desenvolvido utilizando React, esse projeto me permitiu a aplicação prática d
 Todas as imagens contidas nesse projeto foram tiradas dos seguintes sites:
 * **<a href="https://www.jetphotos.com/">JetPhotos</a>** (imagens dos aviões)
 * **<a href="https://unsplash.com/">Unsplash</a>** (imagem na página "Sobre")
+
+**Observação: A GabJets é uma empresa fictícia e este projeto é estritamente destinado a fins educacionais. Não se trata de uma plataforma real de venda de aeronaves.**

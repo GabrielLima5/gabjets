@@ -105,9 +105,12 @@
     }
 
     .card .description .name,
-    .card .description .price,
     .card .description .currency{
         font-size: 1rem;
+    }
+
+    .card .description .price{
+        font-size: .8rem;
     }
 
     .card .buttons button{

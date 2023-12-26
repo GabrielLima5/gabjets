@@ -15,7 +15,7 @@ A GabJets é uma plataforma online de concessionária de aeronaves, oferecendo a
 ## Habilidades colocadas em prática
 Desenvolvido utilizando React, esse projeto me permitiu a aplicação prática de diversos conceitos, como:
 
-* **Programação assíncrona**: Implementação de requisições assíncronas com Fetch e async/await para obter todas as aeronaves vindas da API.
+* **Programação assíncrona**: Implementação de requisições assíncronas com Fetch e async/await para obter todas as aeronaves vindas da <a href="https://github.com/GabrielLima5/planes-api">API</a>.
 
 * **Context API**: Utilização da Context API para armazenar dados globalmente, notavelmente empregada no carrinho de compras da aplicação.
 

@@ -1,138 +1,127 @@
-.card .image img{
-    width: 350px;
-    height: 240px;    
-    border-top-left-radius: 32px;
-    border-top-right-radius: 32px;
-}
-
-.card{
-    border-radius: 32px;
-    background-color: #931600;
-    width: 350px;
+.card {
+    --tilt-rx: 0deg;
+    --tilt-ry: 0deg;
+    --tilt-lift: 0px;
+    position: relative;
+    width: 340px;
+    margin: 14px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    outline: 5px solid #4c0b00;
-    margin: 25px 10px;
+    background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: var(--blur-glass);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transform: translateY(var(--tilt-lift)) perspective(1000px) rotateX(var(--tilt-rx)) rotateY(var(--tilt-ry));
+    transition: transform 0.4s var(--ease), border-color var(--transition), box-shadow var(--transition);
+    transform-style: preserve-3d;
 }
 
-.card:hover{
-    transform: translateY(-30px);
-    transition: .5s ;
+.card:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--glow-accent), var(--shadow-lg);
 }
 
-.card .description{
+/* Diagonal shine sweep on hover */
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.12) 50%, transparent 60%);
+    background-size: 250% 250%;
+    background-position: 200% 0;
+    pointer-events: none;
+    transition: background-position 0.7s var(--ease);
+}
+
+.card:hover::before {
+    background-position: 0 0;
+}
+
+.image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease);
+}
+
+.card:hover .image img {
+    transform: scale(1.08);
+}
+
+.description {
     display: flex;
     flex-direction: column;
-    margin: 15px 0;
-    font-size: 2rem;
+    gap: 6px;
+    padding: 20px 22px 6px;
 }
 
-.card .description .name,
-.card .description .price{
-    margin: 20px 0;
-}
-
-.card .description .name{
-    font-weight: bold;
-}
-
-.card .description .price{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+.name {
     font-size: 1.3rem;
-    font-weight: bold;
 }
 
-.card .description .currency{
-    color: #35c2e7;
-    font-size: 1.7rem;
-}
-
-.card .description .payment_message{
-    font-size: .8rem;
-    align-self: flex-end;
-    margin-right: 30px;
-    color: #ffffffa3;
-}
-
-.card .buttons{
+.price {
     display: flex;
-    justify-content: space-around;
+    align-items: baseline;
+    gap: 6px;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
 }
 
-@media only screen and (max-width: 1500px){
-    .card,
-    .card .image img{
-        width: 300px;
-    }
+.currency {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+}
 
-    .card .image img{
-        height: unset;
-    }
+.paymentMessage {
+    align-self: flex-end;
+    font-size: 0.75rem;
+    color: var(--text-faint);
+}
 
-    .card .description .name{
-        font-size: 1.5rem;
-    }
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 18px 22px 22px;
+}
 
-    .card .buttons button{
-        font-size: .8rem !important;
-        padding: 20px;
+.buttons > * {
+    flex: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transform: none !important;
+        transition: none;
     }
 }
 
-@media only screen and (max-width: 980px){
-    .card,
-    .card .image img{
-        width: 350px;
+@media only screen and (max-width: 980px) {
+    .card {
+        width: 320px;
     }
 }
 
-@media only screen and (max-width: 750px){
-    .card,
-    .card .image img{
-        width: 280px;
-    }
-}
-
-@media only screen and (max-width: 600px){
-    .card,
-    .card .image img{
-        border-radius: 0;
-        width: 180px;
-    }
-
-    .card .description .name,
-    .card .description .currency{
-        font-size: 1rem;
-    }
-
-    .card .description .price{
-        font-size: .8rem;
-    }
-
-    .card .buttons button{
-        font-size: .6rem !important;
-        border-radius: 0;
-        padding: 10px;
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+        max-width: 340px;
         margin: 10px 0;
     }
-}
 
-@media only screen and (max-width: 400px){
-    .card,
-    .card .image img{
-        width: 250px;
-    }
-
-    .card .buttons button{
-        font-size: .7rem !important;
-        padding: 20px;
-    }
-
-    .card .description .name{
-        font-size: 1.2rem;
+    .image {
+        height: 180px;
     }
 }

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 
-const baseUrl = 'https://planes-api.vercel.app/aircrafts'
+const BASE_URL = 'https://planes-api.vercel.app/aircrafts'
 
-export const useFetch = (url = baseUrl) => {
+export const useFetch = (query) => {
     const [aircrafts, setAircrafts] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
+
+    const url = query ? `${BASE_URL}?q=${encodeURIComponent(query)}` : BASE_URL
 
     useEffect(() => {
         async function fetchData(){
@@ -13,11 +15,11 @@ export const useFetch = (url = baseUrl) => {
                 setLoading(true)
                 const res = await fetch(url)
                 const data = await res.json()
-                setLoading(false)
                 setAircrafts(data)
             } catch (e){
                 console.error(e)
-                setError(e)
+                setError('Não foi possível carregar as aeronaves. Tente novamente mais tarde.')
+            } finally {
                 setLoading(false)
             }
         }

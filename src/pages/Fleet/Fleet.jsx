@@ -2,42 +2,44 @@ import styles from './Fleet.module.css'
 import { useParams } from "react-router-dom"
 import AircraftCard from "../../components/AircraftCard/AircraftCard"
 import SearchInput from '../../components/SearchInput/SearchInput'
-import Loader from '../../components/Loader/Loader'
-import { useState, useEffect } from 'react'
+import Reveal from '../../components/Reveal/Reveal'
+import { AircraftGridSkeleton } from '../../components/Skeleton/Skeleton'
+import { useState } from 'react'
 import { useCapitalizeString } from '../../hooks/useCapitalizeString'
-import { useAircraftContext } from '../../context/AircraftContext'
 import { useFetch } from '../../hooks/useFetch'
 import { useSortData } from '../../hooks/useSortData'
 
 export default function Fleet(){
     const { aircrafts, loading, error } = useFetch()
-    const { sortPrice, sortPriceLength, filterCompany } = useSortData()
+    const { sortByPrice, filterByCompany } = useSortData()
     const { company } = useParams()
     const { capitalizeString } = useCapitalizeString()
-    const { scrollTop } = useAircraftContext()
     const [search, setSearch] = useState('')
-    
-    useEffect(() => {
-        scrollTop()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+
+    const sortedAircrafts = [...aircrafts].sort(sortByPrice)
+    const visibleAircrafts = company
+        ? sortedAircrafts.filter(aircraft => filterByCompany(aircraft, company))
+        : sortedAircrafts
 
     return(
         <div className={styles.fleet}>
-            <h1>Catálogo de Aeronaves {company ? capitalizeString(company) : ''}</h1>
-            <SearchInput search={search} setSearch={setSearch} />
+            <Reveal as="h1" className={styles.title}>Catálogo de Aeronaves {company ? capitalizeString(company) : ''}</Reveal>
+            <Reveal delay={0.08}>
+                <SearchInput search={search} setSearch={setSearch} />
+            </Reveal>
             <div className={styles.container}>
-                {loading && <Loader />}
-                {error && <p>{error}</p>}
+                {loading && <AircraftGridSkeleton />}
+                {error && <p className="error">{error}</p>}
 
-                {aircrafts && company ? (
-                    aircrafts.sort(sortPriceLength).sort(sortPrice).filter(aircraft => filterCompany(aircraft, company)).map(aircraft => (
-                        <AircraftCard key={aircraft.id} aircraft={aircraft} />
-                    ))
-                ) : (aircrafts.sort(sortPriceLength).sort(sortPrice).map(aircraft => (
-                        <AircraftCard key={aircraft.id} aircraft={aircraft} />
-                    )))
-                }
+                {!loading && !visibleAircrafts.length && !error && (
+                    <p className={styles.empty}>Nenhuma aeronave encontrada.</p>
+                )}
+
+                {visibleAircrafts.map((aircraft, index) => (
+                    <Reveal key={aircraft.id} delay={Math.min(index, 6) * 0.06}>
+                        <AircraftCard aircraft={aircraft} />
+                    </Reveal>
+                ))}
             </div>
         </div>
     )

@@ -1,15 +1,7 @@
 export const useSortData = () => {
-    const sortPriceLength = (a, b) => {
-        return a.price.length - b.price.length
-    }
+    const sortByPrice = (a, b) => Number(a.price) - Number(b.price)
 
-    const sortPrice = (a, b) => {
-        return a.price - b.price
-    }
+    const filterByCompany = (aircraft, company) => aircraft.company === company
 
-    const filterCompany = (aircraft, company) => {
-        return aircraft.company === company
-    }
-    
-    return { sortPriceLength, sortPrice, filterCompany }
+    return { sortByPrice, filterByCompany }
 }

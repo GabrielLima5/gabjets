@@ -1,34 +1,25 @@
 import { useAircraftContext } from '../context/AircraftContext';
 import { useModalContext } from '../context/ModalContext';
 
-export const useAircraftPurchase = () => {
-    const {aircraftToBuy, setAircraftToBuy} = useAircraftContext()
-    const { display, setDisplay } = useModalContext()
+const MAX_AIRCRAFTS_PER_ORDER = 3
 
-    const checkAircraftAdded = (aircraft) => {
-        return aircraftToBuy.filter((aircraftAdded) => aircraftAdded.id === aircraft.id);
-    };
+export const useAircraftPurchase = () => {
+    const { setAircraftToBuy } = useAircraftContext()
+    const { setDisplay } = useModalContext()
 
     const handleAddAircraftToBuy = (aircraft) => {
-        setDisplay(true);
+        setDisplay(true)
 
-        if (aircraftToBuy.length === 0) {
-            setAircraftToBuy((aircrafts) => [...aircrafts, aircraft]);
-        } else if (aircraftToBuy.length > 2){
-            return
-        } else {
-            if (checkAircraftAdded(aircraft).length) {
-                return;
-            } else {
-                setAircraftToBuy((aircrafts) => [...aircrafts, aircraft]);
-            }
-        }
+        setAircraftToBuy((current) => {
+            const alreadyAdded = current.some(item => item.id === aircraft.id)
+            if (alreadyAdded || current.length >= MAX_AIRCRAFTS_PER_ORDER) return current
+            return [...current, aircraft]
+        })
     }
 
     const handleDeleteAircraft = (aircraft) => {
-        const filteredAircrafts = aircraftToBuy.filter(aircraftToBuy => aircraftToBuy.id !== aircraft.id)
-        setAircraftToBuy((aircrafts) => [...filteredAircrafts])
+        setAircraftToBuy((current) => current.filter(item => item.id !== aircraft.id))
     }
 
-    return { aircraftToBuy, display, handleAddAircraftToBuy, handleDeleteAircraft };
+    return { handleAddAircraftToBuy, handleDeleteAircraft }
 }

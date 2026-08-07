@@ -4,13 +4,12 @@ export const OrderContext = createContext({})
 
 export const OrderProvider = ({children}) => {
     const [name, setName] = useState('')
-    const [city, setCity] = useState('')
     const [airport, setAirport] = useState('')
-    const [totalPrice, setTotalPrice] = useState('')
+    const [totalPrice, setTotalPrice] = useState(null)
     const [showConfirmation, setShowConfirmation] = useState(false)
 
     return(
-        <OrderContext.Provider value={{name, setName, city, setCity, airport, setAirport, showConfirmation, setShowConfirmation, totalPrice, setTotalPrice}}>
+        <OrderContext.Provider value={{name, setName, airport, setAirport, showConfirmation, setShowConfirmation, totalPrice, setTotalPrice}}>
             {children}
         </OrderContext.Provider>
     )

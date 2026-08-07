@@ -1,15 +1,21 @@
-.footer{
-    background-color: #000;
+.footer {
     width: 100%;
-    padding: 20px;
-
+    padding: 28px 6vw;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #fff;
+    gap: 6px;
+    border-top: 1px solid var(--border);
+    background: rgba(6, 8, 14, 0.55);
+    backdrop-filter: var(--blur-glass);
+    color: var(--text-faint);
+    font-size: 0.85rem;
 }
 
-.footer span{
-    margin: 5px 0;
-
+.brand {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
 }

@@ -1,0 +1,88 @@
+.card {
+    width: 340px;
+    margin: 14px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 22px 22px;
+}
+
+.block {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-strong);
+    border-radius: var(--radius-sm);
+}
+
+.block::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+    animation: shimmer 1.6s ease-in-out infinite;
+}
+
+.image {
+    height: 220px;
+    border-radius: 0;
+}
+
+.title {
+    height: 22px;
+    width: 70%;
+}
+
+.price {
+    height: 26px;
+    width: 45%;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.button {
+    flex: 1;
+    height: 44px;
+    border-radius: var(--radius-full);
+}
+
+@keyframes shimmer {
+    100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .block::after {
+        animation: none;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .card {
+        width: 320px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+        max-width: 340px;
+        margin: 10px 0;
+    }
+
+    .image {
+        height: 180px;
+    }
+}

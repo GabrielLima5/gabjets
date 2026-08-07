@@ -1,151 +1,105 @@
-.container h1, .container h2{
-    margin-bottom: 10px;
+.container {
+    width: 100%;
+    padding: 48px 0 60px;
+}
+
+.container h1 {
     font-size: 2.3rem;
-}
-
-.container{
-    width: 100%;
-    min-height: calc(100vh - 215px)
-}
-
-.container .costumer_data{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: flex-start;
-}
-
-.container .form{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-}
-
-.container .form .button{
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.container .form .button button{
-    font-size: 1rem;
-}
-
-.container .form .localization_inputs{
-    display: flex;
-}
-
-.container .form .localization_inputs .state_input{
-    width: 30%;
-    margin-left: 10px;
-}
-
-.cart_info{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cart_info .info_container{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 30px;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 5px;
+    text-align: center;
 }
 
-.cart_info .aircraft_image img{
-    max-width: 200px;
-    margin-right: 20px;
+.container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
 }
 
-.cart_info .description{
+.customerData {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    max-width: 100%;
+    padding: 36px;
+}
+
+.formHint {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.form .button {
+    margin-top: 26px;
+}
+
+.cartInfo {
+    width: 420px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+}
+
+.infoContainer {
     width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.aircraftImage img {
+    width: 110px;
+    border-radius: var(--radius-sm);
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.aircraftName {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.aircraftPrice {
+    color: var(--accent);
+}
+
+.finalPriceRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2rem;
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
 }
 
-.cart_info .description div{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.finalPrice {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--success);
 }
 
-.cart_info .final_price{
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #91ff91;
-}
-
-@media only screen and (max-width: 1400px){
-    .cart_info .description{
-        font-size: 1rem;
-    }
-
-    .cart_info .aircraft_image img{
-        max-width: 150px;
-    }
-}
-
-@media only screen and (max-width: 1100px){
-    .cart_info{
-        width: 50%;
-    }
-
-    .container h2{
-        font-size: 1.8rem;
-        margin-top: 70px;
-    }
-}
-
-@media only screen and (max-width: 900px){
-    .container .costumer_data{
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-
-    .container .form,
-    .cart_info{
-        width: 80%;
-    }
-}
-
-@media only screen and (max-width: 550px){
-    .cart_info .info_container{
+@media only screen and (max-width: 900px) {
+    .customerData {
         flex-direction: column;
         align-items: center;
-        max-width: 75%;
-    }
-    
-    .cart_info .aircraft_image img{
-        max-width: 100%;
-        margin-right: unset;
     }
 
-    .cart_info .description div span{
-        margin-bottom: 10px;
-    }
-
-    .cart_info .description div span,
-    .container button,
-    .container label span{
-        font-size: .8rem;
-    }
-
-    .container h1{
+    .container h1 {
         font-size: 1.8rem;
-    }
-}
-
-@media only screen and (max-width: 400px){
-    .cart_info .info_container{
-        max-width: 270px;
     }
 }

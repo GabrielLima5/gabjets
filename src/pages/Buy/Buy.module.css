@@ -1,92 +1,85 @@
-.buy_page{
+.buyPage {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 212px);
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    padding: 48px 0 60px;
 }
 
-.buy_page h1{
-    font-size: 3em;
+.buyPage h1 {
+    font-size: 2.6rem;
+    margin-bottom: 12px;
 }
 
-.buy_page p{
-    font-size: 1.5em;
+.buyPage p {
+    font-size: 1.1rem;
     margin-bottom: 50px;
 }
 
-.buy_page .container{
+.container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 100px;
+    width: 100%;
 }
 
-.container .companies{
+.companies {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin-right: 200px;
+    gap: 26px;
 }
 
-.container .image img{
-    width: 700px;
-    margin-bottom: 30px;
+.image img {
+    width: 620px;
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
 }
 
-@media only screen and (max-width: 1300px){
-    .container .image img{
-        width: 400px;
-    }
-}
-
-@media only screen and (max-width: 1000px){
-    .container .companies{
-        margin-right: 50px;
+@media only screen and (max-width: 1300px) {
+    .container {
+        gap: 50px;
     }
 
-    .buy_page h1{
-        font-size: 2em;
+    .image img {
+        width: 420px;
     }
 }
 
-@media only screen and (max-width: 700px){
-    .container .companies{
-        flex-direction: row;
-        margin: 0;
-    }
-
-    .buy_page .container{
-        flex-direction: column;
-    }
-
-    .buy_page button{
-        margin: 10px !important;
-        margin-bottom: 30px !important;
-    }
-
-    .buy_page h1{
-        font-size: 1.5em;
-    }
-
-    .buy_page p{
-        font-size: 1em;
+@media only screen and (max-width: 1000px) {
+    .buyPage h1 {
+        font-size: 2rem;
     }
 }
 
-@media only screen and (max-width: 600px){
-    .container .image img{
-        width: 400px;
-    }
-}
-
-@media only screen and (max-width: 450px){
-    .container .image img{
-        width: 250px;
-    }
-
-    .container .companies{
-        flex-direction: column;
-    }
-
-    .buy_page .container{
+@media only screen and (max-width: 700px) {
+    .container {
         flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .companies {
+        flex-direction: row;
+    }
+
+    .buyPage h1 {
+        font-size: 1.6rem;
+    }
+
+    .buyPage p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .companies {
+        flex-direction: column;
+    }
+
+    .image img {
+        width: 100%;
     }
 }

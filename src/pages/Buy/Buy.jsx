@@ -1,62 +1,55 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { AnimatePresence, motion } from 'framer-motion'
 import styles from './Buy.module.css'
+import BrandButton from '../../components/BrandButton/BrandButton'
+import Reveal from '../../components/Reveal/Reveal'
 import EmbraerLogo from '../../assets/Logo/embraer-logo.png'
 import AirbusLogo from '../../assets/Logo/airbus-logo.png'
 import BoeingLogo from '../../assets/Logo/boeing-logo.png'
-
 import BoeingAirplane from '../../assets/MainAirplanes/boeing737.jpg'
 import EmbraerAirplane from '../../assets/MainAirplanes/embraer-175.jpg'
 import AirbusAirplane from '../../assets/MainAirplanes/airbus-a320.jpg'
-import BrandButton from '../../components/BrandButton/BrandButton'
-import { Link } from 'react-router-dom'
-import { useAircraftContext } from '../../context/AircraftContext'
+
+const BRANDS = [
+    { key: 'embraer', name: 'Embraer', logo: EmbraerLogo, image: EmbraerAirplane },
+    { key: 'airbus', name: 'Airbus', logo: AirbusLogo, image: AirbusAirplane },
+    { key: 'boeing', name: 'Boeing', logo: BoeingLogo, image: BoeingAirplane },
+]
 
 export default function Buy(){
-    const [image, setImage] = useState(EmbraerAirplane)
-    const { scrollTop } = useAircraftContext()
-
-    const handleLogo = (e) => {
-        switch(e.target.parentNode.dataset.airplane){
-            case "embraer":
-                setImage(EmbraerAirplane)
-                break;
-
-            case "airbus":
-                setImage(AirbusAirplane)
-                break;
-
-            case "boeing":
-                setImage(BoeingAirplane)
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    useEffect(() => {
-        scrollTop()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    const [activeBrand, setActiveBrand] = useState(BRANDS[0])
 
     return(
-        <div className={styles.buy_page}>
-            <h1>Suas Preferências, Nossa Prioridade!</h1>
-            <p>Escolha uma fabricante para começar</p>
+        <div className={styles.buyPage}>
+            <Reveal as="h1">Suas Preferências, Nossa Prioridade!</Reveal>
+            <Reveal as="p" delay={0.08}>Escolha uma fabricante para começar</Reveal>
             <div className={styles.container}>
                 <div className={styles.companies}>
-                    <Link to="/fleet/embraer">
-                        <BrandButton dataset="embraer" handleLogo={handleLogo} logo={EmbraerLogo} />
-                    </Link>
-                    <Link to="/fleet/airbus">
-                        <BrandButton dataset="airbus" handleLogo={handleLogo} logo={AirbusLogo} />
-                    </Link>
-                    <Link to="/fleet/boeing">
-                        <BrandButton dataset="boeing" handleLogo={handleLogo} logo={BoeingLogo} />
-                    </Link>
+                    {BRANDS.map((brand, index) => (
+                        <Reveal key={brand.key} delay={0.15 + index * 0.08} distance={16}>
+                            <Link to={`/fleet/${brand.key}`}>
+                                <BrandButton
+                                    name={brand.name}
+                                    logo={brand.logo}
+                                    onSelect={() => setActiveBrand(brand)}
+                                />
+                            </Link>
+                        </Reveal>
+                    ))}
                 </div>
                 <div className={styles.image}>
-                    <img src={image} alt="Airplane" />
+                    <AnimatePresence mode="wait">
+                        <motion.img
+                            key={activeBrand.key}
+                            src={activeBrand.image}
+                            alt={`Aeronave ${activeBrand.name}`}
+                            initial={{ opacity: 0, scale: 1.04 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.98 }}
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        />
+                    </AnimatePresence>
                 </div>
             </div>
         </div>

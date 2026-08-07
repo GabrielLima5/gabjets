@@ -1,0 +1,114 @@
+.field {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+
+.trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    outline: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    background-color: var(--surface);
+    backdrop-filter: var(--blur-glass);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.trigger:hover {
+    border-color: var(--border-strong);
+}
+
+.trigger[aria-expanded="true"] {
+    border-color: var(--accent);
+    box-shadow: var(--glow-accent);
+}
+
+.value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.placeholder {
+    color: var(--text-faint);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chevron {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    transition: transform var(--transition);
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 15;
+    max-height: 260px;
+    overflow-y: auto;
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+}
+
+.option {
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    white-space: normal;
+    word-break: break-word;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+.option:hover {
+    background: var(--surface-strong);
+    color: var(--text);
+}
+
+.optionSelected {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 500px) {
+    .trigger {
+        font-size: 0.9rem;
+        padding: 11px 12px;
+    }
+
+    .option {
+        font-size: 0.9rem;
+    }
+}

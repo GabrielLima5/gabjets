@@ -1,109 +1,173 @@
-.navbar{
-    width: 50%;
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
 }
 
-.navbar ul{
+.links {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    gap: 36px;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar ul li a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.2rem;
-    transition: .4s;
+.link {
+    position: relative;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    padding-bottom: 6px;
+    transition: color var(--transition);
 }
 
-.navbar .responsive_cart,
-.navbar li.close_header_modal,
-.navbar .open_header_modal{
-    display: none !important;
+.link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-brand);
+    transition: width var(--transition);
 }
 
-.navbar li.cart,
-.navbar .responsive_cart{
+.link:hover {
+    color: var(--text);
+}
+
+.link:hover::after,
+.active::after {
+    width: 100%;
+}
+
+.active {
+    color: var(--text);
+}
+
+.responsiveCart,
+.closeMenu,
+.menuToggle {
+    display: none;
+}
+
+.cart {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
 }
 
-.navbar li.cart .cart_badge,
-.navbar .responsive_cart .cart_badge{
-    width: 15px;
-    border-radius: 50%;
-    background-color: #e6523a;
+.cart,
+.responsiveCart {
+    position: relative;
+    align-items: center;
+    line-height: 0;
 }
 
-.navbar li.cart svg,
-.navbar .responsive_cart svg{
-    font-size: 2.5rem;
-    color: #ff8470;
+.cart svg,
+.responsiveCart svg {
+    font-size: 1.6rem;
+    color: var(--text);
     cursor: pointer;
+    transition: color var(--transition), filter var(--transition);
 }
 
-.navbar li a:hover{
-    color: #e6523a;
+.cart svg:hover,
+.responsiveCart svg:hover {
+    color: var(--accent);
+    filter: drop-shadow(0 0 10px rgba(69, 224, 255, 0.6));
 }
 
-@media only screen and (max-width: 1200px){
-    .navbar{
-        width: 70%;
-    }
+.cartBadge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-warm);
+    box-shadow: var(--glow-warm);
+    color: #1a0a04;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media only screen and (max-width: 900px){
-    .navbar{
-        width: 90%;
-    }
+/* Mobile drawer: only ever mounted while open (see Navbar.jsx). The clip box
+   is pinned to the viewport and never moves; the panel inside is the only
+   part that slides, clipped by the parent's overflow:hidden. Keeping the
+   fixed-position box itself always exactly viewport-sized (never offset via
+   transform) avoids a mobile-browser quirk where a fixed element transformed
+   off-screen widens the page's layout viewport, making it draggable into view. */
+.mobileMenuClip {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    overflow: hidden;
 }
 
-@media only screen and (max-width: 800px){
-    .navbar{
-        display: flex;
-        max-width: 70%;
+.mobileMenu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    background: rgba(5, 6, 10, 0.97);
+    backdrop-filter: var(--blur-glass);
+    box-shadow: var(--shadow-lg);
+}
+
+.mobileMenu .link {
+    font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar {
         justify-content: flex-end;
+        gap: 18px;
+    }
+
+    .responsiveCart,
+    .menuToggle {
+        display: flex;
         align-items: center;
-    }
-
-    .navbar .responsive_cart,
-    .navbar .open_header_modal{
-        margin: 0 10px;
-    }
-
-    .navbar .open_header_modal{
-        font-size: 2rem;
-    }
-
-    .navbar ul{
-        transition: .4s ease-in-out;
-        flex-direction: column;
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: -100vw;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-size: 1.6rem;
+        cursor: pointer;
         padding: 0;
-        margin: 0;
-        z-index: 2;
-        background-color: #000;
     }
 
-    .navbar li.cart{
-        display: none !important;
+    .links {
+        display: none;
     }
 
-    .navbar .responsive_cart,
-    .navbar li.close_header_modal,
-    .navbar .open_header_modal{
-        display: flex !important;
+    .navbar:has(.mobileMenuClip) .responsiveCart,
+    .navbar:has(.mobileMenuClip) .menuToggle {
+        visibility: hidden;
     }
 
-    .navbar li.close_header_modal{
-        font-size: 1.5rem;
-        align-self: flex-start;
-        padding-left: 20px;
+    .closeMenu {
+        display: block;
+        position: absolute;
+        top: 28px;
+        right: 28px;
+        font-size: 1.8rem;
+        color: var(--text);
+        cursor: pointer;
     }
 }
